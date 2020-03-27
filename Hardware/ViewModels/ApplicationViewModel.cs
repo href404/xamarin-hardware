@@ -3,7 +3,7 @@ using Hardware.Services;
 
 namespace Hardware.ViewModels
 {
-    public class ApplicationViewModel : BaseViewModel
+    public class ApplicationViewModel
     {
         private readonly ApplicationService Service;
 

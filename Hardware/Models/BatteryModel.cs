@@ -2,11 +2,32 @@
 
 namespace Hardware.Models
 {
-    public class BatteryModel
+    public class BatteryModel : NotifyModel
     {
-        public double ChargeLevel { get; set; }
-        public BatteryState State { get; set; }
-        public BatteryPowerSource PowerSource { get; set; }
-        public EnergySaverStatus EnergySaverStatus { get; set; }
+        private double chargeLevel;
+        private BatteryState state;
+        private BatteryPowerSource powerSource;
+        private EnergySaverStatus energySaverStatus;
+
+        public double ChargeLevel 
+        {
+            get { return chargeLevel;  }
+            set { SetProperty(ref chargeLevel, value); }
+        }
+        public BatteryState State
+        {
+            get { return state; }
+            set { SetProperty(ref state, value); }
+        }
+        public BatteryPowerSource PowerSource
+        {
+            get { return powerSource; }
+            set { SetProperty(ref powerSource, value); }
+        }
+        public EnergySaverStatus EnergySaverStatus
+        {
+            get { return energySaverStatus; }
+            set { SetProperty(ref energySaverStatus, value); }
+        }
     }
 }

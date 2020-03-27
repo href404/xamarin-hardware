@@ -28,25 +28,25 @@
             <Label
                 Grid.Row="0"
                 Grid.Column="1"
-                Text="{Binding Model.ChargeLevel, Mode=TwoWay}" />
+                Text="{Binding Model.ChargeLevel, Mode=OneWay}" />
 
             <Label Grid.Row="1" Text="State" />
             <Label
                 Grid.Row="1"
                 Grid.Column="1"
-                Text="{Binding Model.State, Mode=TwoWay}" />
+                Text="{Binding Model.State, Mode=OneWay}" />
 
             <Label Grid.Row="2" Text="PowerSource" />
             <Label
                 Grid.Row="2"
                 Grid.Column="1"
-                Text="{Binding Model.PowerSource, Mode=TwoWay}" />
+                Text="{Binding Model.PowerSource, Mode=OneWay}" />
 
             <Label Grid.Row="3" Text="EnergySaverStatus" />
             <Label
                 Grid.Row="3"
                 Grid.Column="1"
-                Text="{Binding Model.EnergySaverStatus, Mode=TwoWay}" />
+                Text="{Binding Model.EnergySaverStatus, Mode=OneWay}" />
 
         </Grid>
 
