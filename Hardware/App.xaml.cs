@@ -11,7 +11,7 @@ namespace Hardware
         public App()
         {
             InitializeComponent();
-            MainPage = new MainPage();
+            MainPage = new AppInfoView();
         }
 
         protected override void OnStart()

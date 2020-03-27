@@ -3,10 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-using Xamarin.Forms;
-
-using Hardware.Models;
-
 namespace Hardware.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
@@ -26,9 +22,7 @@ namespace Hardware.ViewModels
             set { SetProperty(ref title, value); }
         }
 
-        protected bool SetProperty<T>(ref T backingStore, T value,
-            [CallerMemberName]string propertyName = "",
-            Action onChanged = null)
+        protected bool SetProperty<T>(ref T backingStore, T value, [CallerMemberName]string propertyName = "", Action onChanged = null)
         {
             if (EqualityComparer<T>.Default.Equals(backingStore, value))
                 return false;
@@ -40,7 +34,9 @@ namespace Hardware.ViewModels
         }
 
         #region INotifyPropertyChanged
+
         public event PropertyChangedEventHandler PropertyChanged;
+
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
             var changed = PropertyChanged;
@@ -49,6 +45,7 @@ namespace Hardware.ViewModels
 
             changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
         #endregion
     }
 }
