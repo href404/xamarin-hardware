@@ -3,11 +3,11 @@ using Xamarin.Essentials;
 
 namespace Hardware.Services
 {
-    public class AppInfoService
+    public class ApplicationService
     {
-        public AppInfoModel Get() 
+        public ApplicationModel Get() 
         {
-            return new AppInfoModel()
+            return new ApplicationModel()
             {
                 Name = AppInfo.Name,
                 Package = AppInfo.PackageName,

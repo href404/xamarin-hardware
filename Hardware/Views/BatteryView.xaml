@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="Hardware.Views.AppInfoView"
+    x:Class="Hardware.Views.BatteryView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
@@ -24,29 +24,29 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Label Grid.Row="0" Text="Name" />
+            <Label Grid.Row="0" Text="ChargeLevel" />
             <Label
                 Grid.Row="0"
                 Grid.Column="1"
-                Text="{Binding Model.Name}" />
+                Text="{Binding Model.ChargeLevel, Mode=TwoWay}" />
 
-            <Label Grid.Row="1" Text="Package" />
+            <Label Grid.Row="1" Text="State" />
             <Label
                 Grid.Row="1"
                 Grid.Column="1"
-                Text="{Binding Model.Package}" />
+                Text="{Binding Model.State, Mode=TwoWay}" />
 
-            <Label Grid.Row="2" Text="Version" />
+            <Label Grid.Row="2" Text="PowerSource" />
             <Label
                 Grid.Row="2"
                 Grid.Column="1"
-                Text="{Binding Model.Version}" />
+                Text="{Binding Model.PowerSource, Mode=TwoWay}" />
 
-            <Label Grid.Row="3" Text="Build" />
+            <Label Grid.Row="3" Text="EnergySaverStatus" />
             <Label
                 Grid.Row="3"
                 Grid.Column="1"
-                Text="{Binding Model.Build}" />
+                Text="{Binding Model.EnergySaverStatus, Mode=TwoWay}" />
 
         </Grid>
 

@@ -20,8 +20,8 @@ namespace Hardware.Views
 
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
-                new HomeMenuItem {Id = MenuItemType.About, Title="About" }
+                new HomeMenuItem {Id = MenuItemType.Application, Title="Application" },
+                new HomeMenuItem {Id = MenuItemType.Battery, Title="Battery" }
             };
 
             ListViewMenu.ItemsSource = menuItems;

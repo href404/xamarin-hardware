@@ -1,6 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 using Hardware.Views;
 
 namespace Hardware
@@ -11,7 +9,7 @@ namespace Hardware
         public App()
         {
             InitializeComponent();
-            MainPage = new AppInfoView();
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()

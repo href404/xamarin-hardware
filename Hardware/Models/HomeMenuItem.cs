@@ -2,8 +2,8 @@
 {
     public enum MenuItemType
     {
-        Browse,
-        About
+        Application,
+        Battery
     }
     public class HomeMenuItem
     {

@@ -1,6 +1,6 @@
 ﻿namespace Hardware.Models
 {
-    public class AppInfoModel
+    public class ApplicationModel
     {
         public string Name { get; set; }
         public string Package { get; set; }

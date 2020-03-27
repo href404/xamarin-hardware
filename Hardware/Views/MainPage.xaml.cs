@@ -15,13 +15,13 @@ namespace Hardware.Views
     public partial class MainPage : MasterDetailPage
     {
         Dictionary<int, NavigationPage> MenuPages = new Dictionary<int, NavigationPage>();
+
         public MainPage()
         {
             InitializeComponent();
 
             MasterBehavior = MasterBehavior.Popover;
-
-            MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
+            MenuPages.Add((int)MenuItemType.Application, (NavigationPage)Detail);
         }
 
         public async Task NavigateFromMenu(int id)
@@ -30,12 +30,12 @@ namespace Hardware.Views
             {
                 switch (id)
                 {
-                    //case (int)MenuItemType.Browse:
-                    //    MenuPages.Add(id, new NavigationPage(new ItemsPage()));
-                    //    break;
-                    //case (int)MenuItemType.About:
-                    //    MenuPages.Add(id, new NavigationPage(new AboutPage()));
-                    //    break;
+                    case (int)MenuItemType.Application:
+                        MenuPages.Add(id, new NavigationPage(new AppInfoView()));
+                        break;
+                    case (int)MenuItemType.Battery:
+                        MenuPages.Add(id, new NavigationPage(new BatteryView()));
+                        break;
                 }
             }
 
