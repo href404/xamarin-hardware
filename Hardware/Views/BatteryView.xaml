@@ -9,7 +9,7 @@
     <ContentPage.Content>
 
         <Grid
-            Margin="10"
+            Margin="{StaticResource PageMargin}"
             ColumnSpacing="10"
             RowSpacing="10">
 

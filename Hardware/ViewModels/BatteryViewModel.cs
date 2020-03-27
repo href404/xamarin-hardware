@@ -5,7 +5,6 @@ namespace Hardware.ViewModels
 {
     public class BatteryViewModel
     {
-
         private readonly BatteryService Service;
 
         public BatteryModel Model { get; private set; }

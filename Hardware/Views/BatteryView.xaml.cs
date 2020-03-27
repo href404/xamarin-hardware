@@ -12,12 +12,6 @@ namespace Hardware.Views
         {
             InitializeComponent();
             BindingContext = new BatteryViewModel();
-            BindingContextChanged += OnBindingContextChanged;
-        }
-
-        private void OnBindingContextChanged(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
         }
     }
 }

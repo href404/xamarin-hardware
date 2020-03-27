@@ -6,12 +6,12 @@ using Xamarin.Forms.Xaml;
 namespace Hardware.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class VibrationView : ContentPage
+    public partial class VibratorView : ContentPage
     {
-        public VibrationView()
+        public VibratorView()
         {
             InitializeComponent();
-            BindingContext = new VibrationViewModel();
+            BindingContext = new VibratorViewModel();
         }
     }
 }
