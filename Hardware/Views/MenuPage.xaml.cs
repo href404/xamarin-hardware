@@ -1,4 +1,5 @@
 ﻿using Hardware.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using Xamarin.Forms;
@@ -8,17 +9,19 @@ namespace Hardware.Views
     [DesignTimeVisible(false)]
     public partial class MenuPage : ContentPage
     {
+        private const int FIRST_MENU_ITEM = 0;
+
         public MenuPage()
         {
             InitializeComponent();
 
             List<HomeMenuItem> menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Application, Title="Application" },
-                new HomeMenuItem {Id = MenuItemType.Battery, Title="Battery" }
+                new HomeMenuItem { Id = MenuItemType.Application, Title=Enum.GetName(typeof(MenuItemType), MenuItemType.Application) },
+                new HomeMenuItem { Id = MenuItemType.Battery, Title=Enum.GetName(typeof(MenuItemType), MenuItemType.Battery) }
             };
             ListViewMenu.ItemsSource = menuItems;
-            ListViewMenu.SelectedItem = menuItems[0];
+            ListViewMenu.SelectedItem = menuItems[FIRST_MENU_ITEM];
             ListViewMenu.ItemSelected += async (sender, e) =>
             {
                 if (e.SelectedItem == null)
