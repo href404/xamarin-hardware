@@ -19,6 +19,7 @@
     public enum MenuItemType
     {
         Application,
-        Battery
+        Battery,
+        Vibration
     }
 }

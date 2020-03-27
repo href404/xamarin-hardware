@@ -18,7 +18,8 @@ namespace Hardware.Views
             List<HomeMenuItem> menuItems = new List<HomeMenuItem>
             {
                 new HomeMenuItem { Id = MenuItemType.Application, Title=Enum.GetName(typeof(MenuItemType), MenuItemType.Application) },
-                new HomeMenuItem { Id = MenuItemType.Battery, Title=Enum.GetName(typeof(MenuItemType), MenuItemType.Battery) }
+                new HomeMenuItem { Id = MenuItemType.Battery, Title=Enum.GetName(typeof(MenuItemType), MenuItemType.Battery) },
+                new HomeMenuItem { Id = MenuItemType.Vibration, Title=Enum.GetName(typeof(MenuItemType), MenuItemType.Vibration) }
             };
             ListViewMenu.ItemsSource = menuItems;
             ListViewMenu.SelectedItem = menuItems[FIRST_MENU_ITEM];
@@ -27,7 +28,7 @@ namespace Hardware.Views
                 if (e.SelectedItem == null)
                     return;
 
-                var id = (int)((HomeMenuItem)e.SelectedItem).Id;
+                int id = (int)((HomeMenuItem)e.SelectedItem).Id;
                 await (Application.Current.MainPage as MainPage).NavigateFromMenu(id);
             };
         }

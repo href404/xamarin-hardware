@@ -9,7 +9,8 @@ namespace Hardware.ViewModels
 
         public ApplicationModel Model { get; private set; }
 
-        public ApplicationViewModel() { 
+        public ApplicationViewModel() 
+        { 
             Service = new ApplicationService();
             Model = Service.Get();
         }

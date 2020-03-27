@@ -33,6 +33,9 @@ namespace Hardware.Views
                     case (int)MenuItemType.Battery:
                         MenuPages.Add(id, new NavigationPage(new BatteryView()));
                         break;
+                    case (int)MenuItemType.Vibration:
+                        MenuPages.Add(id, new NavigationPage(new VibrationView()));
+                        break;
                 }
             }
 
