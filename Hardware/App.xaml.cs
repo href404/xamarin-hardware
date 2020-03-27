@@ -1,7 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Hardware.Services;
 using Hardware.Views;
 
 namespace Hardware
@@ -12,8 +11,6 @@ namespace Hardware
         public App()
         {
             InitializeComponent();
-
-            DependencyService.Register<MockDataStore>();
             MainPage = new MainPage();
         }
 
