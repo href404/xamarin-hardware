@@ -22,6 +22,7 @@
         Application,
         Battery,
         Vibration,
-        Email
+        Email,
+        Accelerometer
     }
 }

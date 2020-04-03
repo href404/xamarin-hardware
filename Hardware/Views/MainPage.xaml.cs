@@ -39,6 +39,9 @@ namespace Hardware.Views
                     case (int)MenuItemType.Email:
                         MenuPages.Add(id, new NavigationPage(new EmailView()));
                         break;
+                    case (int)MenuItemType.Accelerometer:
+                        MenuPages.Add(id, new NavigationPage(new AccelerometerView()));
+                        break;
                 }
             }
 
