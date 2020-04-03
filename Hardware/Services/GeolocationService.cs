@@ -9,12 +9,11 @@ namespace Hardware.Services
 {
     public class GeolocationService
     {
+        private static readonly TimeSpan Timeout = new TimeSpan(0, 0, 2);
+        private static readonly GeolocationRequest GeolocationRequest = new GeolocationRequest(GeolocationAccuracy.Medium, Timeout);
 
         private GeolocationModel Model;
         private bool IsStarted = false;
-        
-        private readonly GeolocationRequest GeolocationRequest = 
-            new GeolocationRequest(GeolocationAccuracy.Medium, new TimeSpan(0, 0, 1));
 
         public GeolocationModel Get()
         {
