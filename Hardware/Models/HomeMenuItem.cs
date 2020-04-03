@@ -24,6 +24,7 @@
         Vibration,
         Email,
         Accelerometer,
-        Geolocation
+        Geolocation,
+        Camera
     }
 }

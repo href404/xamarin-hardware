@@ -22,7 +22,8 @@ namespace Hardware.Views
                 new HomeMenuItem { Id = MenuItemType.Vibration, Title=Enum.GetName(typeof(MenuItemType), MenuItemType.Vibration) },
                 new HomeMenuItem { Id = MenuItemType.Email, Title=Enum.GetName(typeof(MenuItemType), MenuItemType.Email) },
                 new HomeMenuItem { Id = MenuItemType.Accelerometer, Title=Enum.GetName(typeof(MenuItemType), MenuItemType.Accelerometer) },
-                new HomeMenuItem { Id = MenuItemType.Geolocation, Title=Enum.GetName(typeof(MenuItemType), MenuItemType.Geolocation) }
+                new HomeMenuItem { Id = MenuItemType.Geolocation, Title=Enum.GetName(typeof(MenuItemType), MenuItemType.Geolocation) },
+                new HomeMenuItem { Id = MenuItemType.Camera, Title=Enum.GetName(typeof(MenuItemType), MenuItemType.Camera) }
             };
             ListViewMenu.ItemsSource = menuItems;
             ListViewMenu.SelectedItem = menuItems[FIRST_MENU_ITEM];

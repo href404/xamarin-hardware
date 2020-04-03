@@ -45,6 +45,9 @@ namespace Hardware.Views
                     case (int)MenuItemType.Geolocation:
                         MenuPages.Add(id, new NavigationPage(new GeolocationView()));
                         break;
+                    case (int)MenuItemType.Camera:
+                        MenuPages.Add(id, new NavigationPage(new CameraView()));
+                        break;
                 }
             }
 
