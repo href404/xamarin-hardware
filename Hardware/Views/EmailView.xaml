@@ -3,6 +3,7 @@
     x:Class="Hardware.Views.EmailView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:behaviors="clr-namespace:Hardware.Behaviors"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
@@ -29,7 +30,14 @@
                 Grid.ColumnSpan="2"
                 Orientation="Horizontal">
                 <Label Text="To" VerticalOptions="Center" />
-                <Editor HorizontalOptions="FillAndExpand" Text="{Binding Model.Recipients, Mode=TwoWay}" />
+                <Editor
+                    HorizontalOptions="FillAndExpand"
+                    Keyboard="Email"
+                    Text="{Binding Model.Recipient, Mode=TwoWay}">
+                    <Editor.Behaviors>
+                        <behaviors:EmailValidationBehavior />
+                    </Editor.Behaviors>
+                </Editor>
             </StackLayout>
 
             <StackLayout
@@ -50,6 +58,8 @@
                 Grid.ColumnSpan="2"
                 Command="{Binding SendCommand}"
                 Text="Send email" />
+
+            <Label Text="{Binding ErrorLabel}" TextColor="IndianRed" />
 
         </Grid>
 

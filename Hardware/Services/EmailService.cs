@@ -14,7 +14,7 @@ namespace Hardware.Services
         public EmailModel Get()
         {
             if (Model == null)
-                Model = new EmailModel();
+                Model = new EmailModel { Subject = AppInfo.Name };
 
             return Model;
         }
@@ -36,7 +36,6 @@ namespace Hardware.Services
             {
                 Debug.WriteLine(ex.ToString());
             }
-           
         }
     }
 }
