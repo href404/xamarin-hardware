@@ -11,7 +11,7 @@ namespace Hardware.Views
     public partial class MainPage : MasterDetailPage
     {
 
-        private Dictionary<int, NavigationPage> MenuPages = new Dictionary<int, NavigationPage>();
+        private readonly Dictionary<int, NavigationPage> MenuPages = new Dictionary<int, NavigationPage>();
 
         public MainPage()
         {
@@ -41,6 +41,9 @@ namespace Hardware.Views
                         break;
                     case (int)MenuItemType.Accelerometer:
                         MenuPages.Add(id, new NavigationPage(new AccelerometerView()));
+                        break;
+                    case (int)MenuItemType.Geolocation:
+                        MenuPages.Add(id, new NavigationPage(new GeolocationView()));
                         break;
                 }
             }

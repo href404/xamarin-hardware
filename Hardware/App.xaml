@@ -18,6 +18,7 @@
             </Style>
 
             <converters:InverseBooleanConverter x:Key="InverseBooleanConverter" />
+            <converters:DoubleNullableConverter x:Key="DoubleNullableConverter" />
 
             <Thickness x:Key="PageMargin">
                 <Thickness.Bottom>20</Thickness.Bottom>

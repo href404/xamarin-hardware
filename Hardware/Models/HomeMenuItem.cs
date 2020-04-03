@@ -23,6 +23,7 @@
         Battery,
         Vibration,
         Email,
-        Accelerometer
+        Accelerometer,
+        Geolocation
     }
 }
