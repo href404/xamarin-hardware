@@ -19,7 +19,8 @@ namespace Hardware.Views
             {
                 new HomeMenuItem { Id = MenuItemType.Application, Title=Enum.GetName(typeof(MenuItemType), MenuItemType.Application) },
                 new HomeMenuItem { Id = MenuItemType.Battery, Title=Enum.GetName(typeof(MenuItemType), MenuItemType.Battery) },
-                new HomeMenuItem { Id = MenuItemType.Vibration, Title=Enum.GetName(typeof(MenuItemType), MenuItemType.Vibration) }
+                new HomeMenuItem { Id = MenuItemType.Vibration, Title=Enum.GetName(typeof(MenuItemType), MenuItemType.Vibration) },
+                new HomeMenuItem { Id = MenuItemType.Email, Title=Enum.GetName(typeof(MenuItemType), MenuItemType.Email) }
             };
             ListViewMenu.ItemsSource = menuItems;
             ListViewMenu.SelectedItem = menuItems[FIRST_MENU_ITEM];

@@ -16,10 +16,12 @@
             set { SetProperty(ref title, value); }
         }
     }
+
     public enum MenuItemType
     {
         Application,
         Battery,
-        Vibration
+        Vibration,
+        Email
     }
 }

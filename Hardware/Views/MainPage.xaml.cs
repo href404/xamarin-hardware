@@ -36,6 +36,9 @@ namespace Hardware.Views
                     case (int)MenuItemType.Vibration:
                         MenuPages.Add(id, new NavigationPage(new VibratorView()));
                         break;
+                    case (int)MenuItemType.Email:
+                        MenuPages.Add(id, new NavigationPage(new EmailView()));
+                        break;
                 }
             }
 
