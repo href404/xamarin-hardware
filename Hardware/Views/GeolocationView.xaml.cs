@@ -19,7 +19,13 @@ namespace Hardware.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            GeolocationViewModel.UpdateCommand.Execute(null);
+            GeolocationViewModel.Start();
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            GeolocationViewModel.Stop();
         }
     }
 }

@@ -42,12 +42,6 @@
                 Grid.Column="1"
                 Text="{Binding Model.Altitude, Converter={StaticResource DoubleNullableConverter}, Mode=OneWay}" />
 
-            <Label Grid.Row="3" Text="Distance from Agen in kilometers" />
-            <Label
-                Grid.Row="3"
-                Grid.Column="1"
-                Text="{Binding DistanceFromAgen, StringFormat='{0:0.0} km', Mode=TwoWay}" />
-
         </Grid>
 
     </ContentPage.Content>

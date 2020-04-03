@@ -1,6 +1,7 @@
 ﻿using Hardware.Models;
 using System;
 using System.Diagnostics;
+using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
 
@@ -8,9 +9,12 @@ namespace Hardware.Services
 {
     public class GeolocationService
     {
+
         private GeolocationModel Model;
-        private static TimeSpan Timeout = new TimeSpan(0, 0, 1);
-        private readonly GeolocationRequest GeolocationRequest = new GeolocationRequest(GeolocationAccuracy.Medium, Timeout);
+        private bool IsStarted = false;
+        
+        private readonly GeolocationRequest GeolocationRequest = 
+            new GeolocationRequest(GeolocationAccuracy.Medium, new TimeSpan(0, 0, 1));
 
         public GeolocationModel Get()
         {
@@ -20,7 +24,42 @@ namespace Hardware.Services
             return Model;
         }
 
-        public async Task GetLastKnownLocationAsync()
+        public void Start()
+        {
+            if (IsStarted)
+                return;
+
+            IsStarted = true;
+            Acquire();
+        }
+
+        public void Stop()
+        {
+            if (!IsStarted)
+                return;
+
+            IsStarted = false;
+        }
+
+        private void Acquire()
+        {
+            ThreadPool.QueueUserWorkItem(async (object state) => 
+            {
+                int tick = Environment.TickCount;
+                await GetLocationAsync();
+                
+                int duration = Environment.TickCount - tick;
+                Debug.WriteLine($"Delta temps : {duration} ms");
+
+                int waitingDuration = duration < 1000 ? 1000 - duration : 1;
+                Thread.Sleep(waitingDuration);
+                
+                if (IsStarted)
+                    Acquire();
+            });
+        }
+
+        private async Task GetLocationAsync()
         {
             try
             {
@@ -37,14 +76,6 @@ namespace Hardware.Services
                 Debug.WriteLine(ex.ToString());
             }
         }
-
-        public async Task<double> DistanceFromCityAsync(Location city)
-        {
-            if (city == null)
-                return 0;
-
-            Location currentlocation = await Geolocation.GetLocationAsync(GeolocationRequest);
-            return Location.CalculateDistance(currentlocation, city, DistanceUnits.Kilometers);
-        }
+      
     }
 }
