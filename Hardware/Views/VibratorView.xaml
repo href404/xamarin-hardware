@@ -30,6 +30,7 @@
                 Text="{Binding Model.Duration, Mode=TwoWay}" />
 
             <Slider
+                x:Name="Slider"
                 Grid.Row="1"
                 Grid.ColumnSpan="2"
                 Maximum="5000"
@@ -38,9 +39,16 @@
 
             <Button
                 Grid.Row="2"
-                Grid.ColumnSpan="2"
+                Grid.ColumnSpan="1"
                 Command="{Binding VibrateCommand}"
-                Text="Vibrate" />
+                Text="Vibrate without duration" />
+
+            <Button
+                Grid.Row="2"
+                Grid.Column="1"
+                Command="{Binding VibrateDurationCommand}"
+                CommandParameter="{Binding Source={x:Reference Slider}, Path=Value}"
+                Text="Vibrate with duration" />
 
         </Grid>
 

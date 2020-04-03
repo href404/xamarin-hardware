@@ -1,5 +1,4 @@
 ﻿using Hardware.Models;
-using System.Diagnostics;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
 
@@ -12,19 +11,22 @@ namespace Hardware.Services
         public VibratorModel Get() 
         {
             if (Model == null)
-                Model = new VibratorModel() { Duration = 2500 };
+                Model = new VibratorModel();
 
             return Model;
         }
 
         public async Task Vibrate() 
-        {
-            await Task.Run(() => 
-            {
-                Debug.WriteLine($"Duration : {Model.Duration} ms");
-                Vibration.Vibrate(Model.Duration); 
-            });
+        { 
+            await Task.Run(() => Vibration.Vibrate()); 
         }
 
+        public async Task Vibrate(double duration) 
+        {
+            if (duration == 0)
+                return;
+
+            await Task.Run(() => Vibration.Vibrate(duration)); 
+        }
     }
 }

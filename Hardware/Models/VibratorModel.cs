@@ -2,7 +2,7 @@
 {
     public class VibratorModel : NotifyModel
     {
-        private double duration;
+        private double duration = 2500;
         
         public double Duration 
         { 
