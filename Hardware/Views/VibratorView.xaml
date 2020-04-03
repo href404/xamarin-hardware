@@ -17,6 +17,7 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -27,7 +28,7 @@
             <Label
                 Grid.Row="0"
                 Grid.Column="1"
-                Text="{Binding Model.Duration, Mode=TwoWay}" />
+                Text="{Binding Source={x:Reference Slider}, Path=Value, StringFormat='{0:F0}'}" />
 
             <Slider
                 x:Name="Slider"
@@ -39,16 +40,18 @@
 
             <Button
                 Grid.Row="2"
-                Grid.ColumnSpan="1"
+                Grid.ColumnSpan="2"
                 Command="{Binding VibrateCommand}"
-                Text="Vibrate without duration" />
+                CommandParameter="{Binding Source={x:Reference Slider}, Path=Value}"
+                IsEnabled="{Binding Model.IsVibrating, Mode=OneWay, Converter={StaticResource InverseBooleanConverter}}"
+                Text="Vibrate" />
 
             <Button
-                Grid.Row="2"
-                Grid.Column="1"
-                Command="{Binding VibrateDurationCommand}"
-                CommandParameter="{Binding Source={x:Reference Slider}, Path=Value}"
-                Text="Vibrate with duration" />
+                Grid.Row="3"
+                Grid.ColumnSpan="2"
+                Command="{Binding CancelCommand}"
+                IsEnabled="{Binding Model.IsVibrating, Mode=OneWay}"
+                Text="Cancel" />
 
         </Grid>
 

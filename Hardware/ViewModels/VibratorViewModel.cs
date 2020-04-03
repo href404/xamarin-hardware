@@ -10,15 +10,14 @@ namespace Hardware.ViewModels
 
         public VibratorModel Model { get; private set; }
         public Command VibrateCommand { get; private set; }
-        public Command VibrateDurationCommand { get; private set; }
+        public Command CancelCommand { get; private set; }
 
         public VibratorViewModel()
         {
             Service = new VibratorService();
             Model = Service.Get();
-            VibrateCommand = new Command(async () => await Service.Vibrate());
-            VibrateDurationCommand = new Command(async (object parameter) => await Service.Vibrate((double) parameter));
+            VibrateCommand = new Command((object parameter) => Service.Vibrate((double) parameter));
+            CancelCommand = new Command(() => Service.Cancel());
         }
-
     }
 }
