@@ -33,8 +33,7 @@ namespace Hardware.UITest
             
             var results = app.WaitForElement(c => c.Marked("Package"));
             
-            //app.Screenshot("Application screen.");
-
+            app.Screenshot("Application page");
             Assert.IsTrue(results.Any());
         }
 
@@ -47,6 +46,7 @@ namespace Hardware.UITest
             app.Tap(x => x.Text("Email"));
             var results = app.WaitForElement(x => x.Text("Send email"));
             
+            app.Screenshot("Email page");
             Assert.IsTrue(results.Any());
         }
     }
